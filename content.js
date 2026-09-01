@@ -8,7 +8,7 @@
 window.SITE_CONTENT = {
   site: {
     eyebrow: "Thoughtful care · Individual attention",
-    headline: "A calm space to share your story",
+    headline: "A calm space to share your \nstory",
     introduction: "Personalised homoeopathic consultations—where there is time to listen, understand and consider your holistic wellbeing."
   },
   doctor: {
@@ -45,7 +45,7 @@ window.SITE_CONTENT = {
     whatsapp: "",
     email: "hello@naturalhealthhomoeo.com.au", // Powers the "Email us" button. Example: "hello@naturalhealthhomoeo.com.au"
     facebook: "https://www.facebook.com/profile.php?id=61576818717827",
-    instagram: "https://www.facebook.com/profile.php?id=61576818717827" // Example: "https://www.instagram.com/your-profile"
+    instagram: "" // Example: "https://www.instagram.com/your-profile"
   },
   approach: {
     intro: "A consultation is a conversation. You will have time to describe what brought you in, ask questions, and understand the next steps.",
