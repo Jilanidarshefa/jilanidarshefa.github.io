@@ -8,7 +8,7 @@
 window.SITE_CONTENT = {
   site: {
     eyebrow: "Thoughtful care · Individual attention",
-    headline: "A calm space to share your \nstory",
+    headline: "A calm space to share your story",
     introduction: "Personalised homoeopathic consultations—where there is time to listen, understand and consider your holistic wellbeing."
   },
   doctor: {
