@@ -41,6 +41,7 @@ window.SITE_CONTENT = {
   contact: {
     heading: "Ready to begin a conversation?",
     intro: "Get in touch to ask a question or arrange a consultation. Please do not include sensitive medical information in an initial message.",
+    appointmentUrl: "https://myappointments.app/portal/public/get-embeded-code?business_id=NDg1Nw==",
     phone: "",
     whatsapp: "",
     email: "hello@naturalhealthhomoeo.com.au", // Powers the "Email us" button. Example: "hello@naturalhealthhomoeo.com.au"

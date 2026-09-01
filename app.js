@@ -123,6 +123,15 @@
   /* Rows appear in this order, and any row with no value is left out. */
   /* Tolerate a stray "mailto:" prefix or padding around the address. */
   const email = String(data.contact.email || "").trim().replace(/^mailto:/i, "");
+  const appointmentUrl = String(data.contact.appointmentUrl || "").trim();
+
+  if (appointmentUrl) {
+    document.querySelectorAll(".appointment-link").forEach((link) => {
+      link.href = appointmentUrl;
+      link.target = "_blank";
+      link.rel = "noopener";
+    });
+  }
 
   const contactItems = [
     ["Phone", icons.phone, data.contact.phone, `tel:${data.contact.phone.replace(/\s/g, "")}`],
@@ -146,7 +155,9 @@
       )
       .join("")}</div>
     ${
-      email
+      appointmentUrl
+        ? `<a class="button button-wide" href="${escapeHtml(appointmentUrl)}" target="_blank" rel="noopener">Book an appointment <span class="button-arrow">↗</span></a>`
+        : email
         ? `<a class="button button-wide" href="mailto:${escapeHtml(email)}">Email us <span class="button-arrow">↗</span></a>`
         : ""
     }`;
