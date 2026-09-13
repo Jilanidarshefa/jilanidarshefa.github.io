@@ -45,7 +45,7 @@ The defaults below are already present in `content.js`. Replace placeholder text
 | Clinic | `hours` | Consultation days and hours |
 | Contact | `phone` | Public phone number; optional |
 | Contact | `whatsapp` | International format, e.g. `+8801...`; optional |
-| Contact | `email` | salmajds@yahoo.com; the "Email us" button opens a message to it |
+| Contact | `email` | the "Email us" button opens a message to it |
 | Contact | `facebook` | Facebook page URL |
 | Contact | `instagram` | Instagram profile URL; optional |
 | Approach | `intro` | Introduction to consultations |
