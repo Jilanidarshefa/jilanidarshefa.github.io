@@ -44,7 +44,7 @@ window.SITE_CONTENT = {
     appointmentUrl: "https://myappointments.app/portal/public/get-embeded-code?business_id=NDg1Nw==",
     phone: "",
     whatsapp: "",
-    email: "hello@naturalhealthhomoeo.com.au", // Powers the "Email us" button. Example: "hello@naturalhealthhomoeo.com.au"
+    email: "salmajds@yahoo.com", // Powers the "Email us" button. Example: "hello@naturalhealthhomoeo.com.au"
     facebook: "https://www.facebook.com/profile.php?id=61576818717827",
     instagram: "" // Example: "https://www.instagram.com/your-profile"
   },
