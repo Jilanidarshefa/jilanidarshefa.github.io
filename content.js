@@ -41,11 +41,16 @@ window.SITE_CONTENT = {
   contact: {
     heading: "Ready to begin a conversation?",
     intro: "Get in touch to ask a question or arrange a consultation. Please do not include sensitive medical information in an initial message.",
-    appointmentUrl: "https://myappointments.app/portal/public/get-embeded-code?business_id=NDg1Nw==",
+    // Powers the "Book a consultation" / "Arrange a consultation" buttons.
+    // Accepts either a booking web link or an email address (used while the
+    // booking app is down); an address opens the visitor's email app instead.
+    // appointmentUrl: "https://myappointments.app/portal/public/get-embeded-code?business_id=NDg1Nw==",
+    appointmentUrl: "salmajds@yahoo.com",
     phone: "",
     whatsapp: "",
     email: "salmajds@yahoo.com", // Powers the "Email us" button. Example: "hello@naturalhealthhomoeo.com.au"
-    facebook: "https://www.facebook.com/profile.php?id=61576818717827",
+    facebook: "",
+    // facebook: "https://www.facebook.com/profile.php?id=61576818717827",
     instagram: "" // Example: "https://www.instagram.com/your-profile"
   },
   approach: {

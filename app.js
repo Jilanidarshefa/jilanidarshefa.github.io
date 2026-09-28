@@ -123,13 +123,26 @@
   /* Rows appear in this order, and any row with no value is left out. */
   /* Tolerate a stray "mailto:" prefix or padding around the address. */
   const email = String(data.contact.email || "").trim().replace(/^mailto:/i, "");
-  const appointmentUrl = String(data.contact.appointmentUrl || "").trim();
+  /* The booking target may be a web link or, while the booking app is down, */
+  /* an email address. An address becomes a mailto: link in the same tab. */
+  const appointment = String(data.contact.appointmentUrl || "").trim();
+  const appointmentIsEmail = /^mailto:/i.test(appointment) || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(appointment);
+  const appointmentHref = appointment
+    ? appointmentIsEmail
+      ? `mailto:${appointment.replace(/^mailto:/i, "")}`
+      : appointment
+    : "";
 
-  if (appointmentUrl) {
+  if (appointmentHref) {
     document.querySelectorAll(".appointment-link").forEach((link) => {
-      link.href = appointmentUrl;
-      link.target = "_blank";
-      link.rel = "noopener";
+      link.href = appointmentHref;
+      if (appointmentIsEmail) {
+        link.removeAttribute("target");
+        link.removeAttribute("rel");
+      } else {
+        link.target = "_blank";
+        link.rel = "noopener";
+      }
     });
   }
 
@@ -155,8 +168,10 @@
       )
       .join("")}</div>
     ${
-      appointmentUrl
-        ? `<a class="button button-wide" href="${escapeHtml(appointmentUrl)}" target="_blank" rel="noopener">Book an appointment <span class="button-arrow">↗</span></a>`
+      appointmentHref
+        ? `<a class="button button-wide" href="${escapeHtml(appointmentHref)}"${
+            appointmentIsEmail ? "" : ` target="_blank" rel="noopener"`
+          }>Book an appointment <span class="button-arrow">↗</span></a>`
         : email
         ? `<a class="button button-wide" href="mailto:${escapeHtml(email)}">Email us <span class="button-arrow">↗</span></a>`
         : ""
